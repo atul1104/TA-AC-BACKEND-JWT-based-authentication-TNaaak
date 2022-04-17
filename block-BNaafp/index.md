@@ -1,4 +1,4 @@
-writeCode
+writeCode.
 
 Design an express API server and implement login & registration system where a user can login/register to the application using email/password combination
 
