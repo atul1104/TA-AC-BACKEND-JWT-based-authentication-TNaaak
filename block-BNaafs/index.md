@@ -1,4 +1,4 @@
-writeCode
+writeCode.
 
 Extend application from Exercise 2 to add the following:-
 
