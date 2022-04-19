@@ -1,4 +1,4 @@
-writeCode
+writeCode.
 
 Modify book-store app from APIs basics chapter to
 
