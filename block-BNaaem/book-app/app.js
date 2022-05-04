@@ -13,7 +13,7 @@ var booksRouter = require('./routes/books');
 
 //connect to database
 mongoose.connect(
-  'mongodb://locslhost/book-app',
+  'mongodb://localhost/book-app',
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     console.log(err ? err : 'Connected to database');

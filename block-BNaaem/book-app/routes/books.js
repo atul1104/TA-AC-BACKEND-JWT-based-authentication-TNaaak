@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
 });
 
 //create a new book
-router.post('/', auth.verifyToken, (req, res, next) => {
+router.post('/', auth.varifyToken, (req, res, next) => {
   let data = req.body;
   Book.create(data, (err, createdBook) => {
     if (err) return next(err);
@@ -24,7 +24,7 @@ router.post('/', auth.verifyToken, (req, res, next) => {
 });
 //update a book
 
-router.put('/:id', auth.verifyToken, (req, res, next) => {
+router.put('/:id', auth.varifyToken, (req, res, next) => {
   let data = req.body;
   let bookId = req.params.id;
 
@@ -36,7 +36,7 @@ router.put('/:id', auth.verifyToken, (req, res, next) => {
 
 //delete a book
 
-router.delete('/:id', auth.verifyToken, (req, res, next) => {
+router.delete('/:id', auth.varifyToken, (req, res, next) => {
   let bookId = req.params.id;
 
   Book.findByIdAndDelete(bookId, (err, deletedBook) => {
@@ -69,7 +69,7 @@ router.get('/:id/comments', (req, res, next) => {
 });
 //creating new comment
 
-router.post('/:id/comment/new', auth.verifyToken, (req, res, next) => {
+router.post('/:id/comment/new', auth.varifyToken, (req, res, next) => {
   let bookId = req.params.id;
   let data = req.body;
   data.createdBy = req.user.id;
@@ -88,7 +88,7 @@ router.post('/:id/comment/new', auth.verifyToken, (req, res, next) => {
 });
 //edit comment
 
-router.get('/:id/comment/edit/:commId', auth.verifyToken, (req, res, next) => {
+router.get('/:id/comment/edit/:commId', auth.varifyToken, (req, res, next) => {
   let bookId = req.params.id;
   let commentId = req.params.commId;
 
@@ -98,7 +98,7 @@ router.get('/:id/comment/edit/:commId', auth.verifyToken, (req, res, next) => {
   });
 });
 
-router.post('/:id/comment/edit/:commId', auth.verifyToken, (req, res, next) => {
+router.post('/:id/comment/edit/:commId', auth.varifyToken, (req, res, next) => {
   let bookId = req.params.id;
   let commentId = req.params.commId;
   let data = req.body;
